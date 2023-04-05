@@ -1,0 +1,35 @@
+<h1>Post Comment for {{ charMovie }}</h1>
+<form [formGroup]="forms" (ngSubmit)="saveComment()">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td>
+        <input type="text" size="30" formControlName="name" />
+      </td>
+    </tr>
+    <tr>
+      <td>Rating:</td>
+      <td>
+        <select formControlName="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+        <td>Comment:</td>
+      <td>
+        <textarea formControlName="comment"></textarea>
+      </td>
+    </tr>
+      <td>
+        <button (click)="goHome()">Back</button>
+      </td>
+      <td>
+        <button type="submit" [disabled]="forms.invalid">Post</button>
+      </td>
+  </table>
+</form>

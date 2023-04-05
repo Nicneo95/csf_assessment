@@ -1,0 +1,14 @@
+<h1>Search Result</h1>
+<button (click)="goHome()">Back</button>
+<div *ngFor="let m of movies">
+    {{m.multimedia_src}}
+    {{m.display_title}}
+    {{m.mpaa_rating}}
+    {{m.headline}}
+    {{m.summary_short}}
+</div>
+<!-- need to append comments with the movies -->
+<div *ngFor="let c of comments">
+    {{c?.comment}}
+</div>
+<button (click)="addComment()">Comment</button>
