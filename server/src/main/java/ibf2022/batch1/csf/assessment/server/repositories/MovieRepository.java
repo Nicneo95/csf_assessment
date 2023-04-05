@@ -1,17 +1,25 @@
 package ibf2022.batch1.csf.assessment.server.repositories;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.stereotype.Repository;
+
+import ibf2022.batch1.csf.assessment.server.models.Comment;
+
+@Repository
 public class MovieRepository {
 
-	// TODO: Task 5
-	// You may modify the parameter but not the return type
-	// Write the native mongo database query in the comment below
-	//
+	@Autowired
+    private MongoTemplate mongoTemplate;
+	
+	private static final String COMMENTS_COL = "comments";
+
 	public int countComments(Object param) {
 		return 0;
 	}
 
-	// TODO: Task 8
-	// Write a method to insert movie comments comments collection
-	// Write the native mongo database query in the comment below
-	//
+	public Comment insertComment(Comment c) {
+        return mongoTemplate.insert(c, COMMENTS_COL);
+    }
+
 }
